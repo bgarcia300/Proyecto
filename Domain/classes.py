@@ -7,10 +7,10 @@ class Item:
         self.description = None
         
 class Warehouse:
-    def __init__(self, id, name):
-        self.id = id
-        self.name = name
-        self.items = {}
+    def __init__(self):
+        self.id = None
+        self.name = None
+        self.item = {}
         
     def add_item(self, item, quantity):
         if item.id in self.items:
@@ -26,10 +26,10 @@ class Warehouse:
         return False
         
 class Distributor:
-    def __init__(self, id, name, address):
-        self.id = id
-        self.name = name
-        self.address = address
+    def __init__(self):
+        self.id = None
+        self.name = None
+        self.address = None
         self.items = {}
         
     def add_item(self, item, quantity):
