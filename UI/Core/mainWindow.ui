@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>mainWindow</class>
+ <widget class="QMainWindow" name="mainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>730</width>
+    <height>443</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Menu principal</string>
+  </property>
+  <widget class="QWidget" name="centralwidget"/>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>730</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuArticulos">
+    <property name="title">
+     <string>Inicio</string>
+    </property>
+    <addaction name="mnuItems"/>
+    <addaction name="separator"/>
+    <addaction name="mnuWarehouse"/>
+    <addaction name="separator"/>
+    <addaction name="mnuDistribuitors"/>
+   </widget>
+   <widget class="QMenu" name="menuBodegas">
+    <property name="title">
+     <string>Inventario</string>
+    </property>
+    <addaction name="mnuItemsByWarehouse"/>
+    <addaction name="separator"/>
+    <addaction name="mnuItemsByDistributor"/>
+   </widget>
+   <addaction name="menuArticulos"/>
+   <addaction name="menuBodegas"/>
+  </widget>
+  <action name="mnuItems">
+   <property name="text">
+    <string>Articulos</string>
+   </property>
+  </action>
+  <action name="mnuWarehouse">
+   <property name="text">
+    <string>Bodegas</string>
+   </property>
+  </action>
+  <action name="mnuDistribuitors">
+   <property name="text">
+    <string>Distribuidores</string>
+   </property>
+  </action>
+  <action name="mnuItemsByWarehouse">
+   <property name="text">
+    <string>Asignar articulo a bodega</string>
+   </property>
+  </action>
+  <action name="mnuItemsByDistributor">
+   <property name="text">
+    <string>Asignar articulo a distribuidor</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
