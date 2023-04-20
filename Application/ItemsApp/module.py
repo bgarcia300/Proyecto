@@ -16,7 +16,7 @@ class FrmItems(QtWidgets.QDialog):
         self.oItem = Item()
         self.oItem.id = self.ui.txtId.text()
         self.oItem.name = self.ui.txtItem.text() 
-        self.oItem.description = self.ui.txtDescription.text()
+        self.oItem.description = int(self.ui.txtDescription.text())
         self.ui.txtId.setText("")
         self.ui.txtItem.setText("")
         self.ui.txtDescription.setText("")

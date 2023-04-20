@@ -4,7 +4,7 @@ class Item:
     def __init__(self):
         self.id = None
         self.name = None
-        self.description = None
+        self.amount = 0
         
 class Warehouse:
     def __init__(self):
