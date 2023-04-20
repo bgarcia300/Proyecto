@@ -1,6 +1,7 @@
 from PyQt6 import QtCore, QtGui, QtWidgets
 from UI.Control.items import Ui_Dialog
 from Domain.classes import *
+from Domain.coreModule import *
 
 class FrmItems(QtWidgets.QDialog):
     def __init__(self) -> None:
@@ -19,3 +20,4 @@ class FrmItems(QtWidgets.QDialog):
         self.ui.txtId.setText("")
         self.ui.txtItem.setText("")
         self.ui.txtDescription.setText("")
+        persistence.addItem(self.oItem)

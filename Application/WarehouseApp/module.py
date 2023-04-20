@@ -1,6 +1,7 @@
 from PyQt6 import QtCore, QtGui, QtWidgets
 from UI.Control.wareHouse import Ui_Dialog
 from Domain.classes import *
+from Domain.coreModule import *
 
 class FrmWarehouse(QtWidgets.QDialog):
     def __init__(self) -> None:
@@ -11,8 +12,9 @@ class FrmWarehouse(QtWidgets.QDialog):
         self.ui.btnSave.clicked.connect(self.btnSave_Clicked)
         
     def btnSave_Clicked(self):
-        self.oItem = Warehouse()
-        self.oItem.id = self.ui.txtIdWarehouse.text()
-        self.oItem.name = self.ui.txtWarehouse.text() 
+        self.oWarehouse = Warehouse()
+        self.oWarehouse.id = self.ui.txtIdWarehouse.text()
+        self.oWarehouse.name = self.ui.txtWarehouse.text() 
         self.ui.txtIdWarehouse.setText("")
         self.ui.txtWarehouse.setText("")
+        persistence.addWarehouse(self.oWarehouse)
