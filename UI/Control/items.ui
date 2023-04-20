@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>504</width>
-    <height>278</height>
+    <width>487</width>
+    <height>181</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -23,7 +23,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Añade la descripcion del articulo:</string>
+    <string>Cuantos articulos desea agregar?</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_2">
@@ -42,10 +42,10 @@
   <widget class="QLineEdit" name="txtDescription">
    <property name="geometry">
     <rect>
-     <x>190</x>
+     <x>200</x>
      <y>130</y>
-     <width>261</width>
-     <height>111</height>
+     <width>121</width>
+     <height>21</height>
     </rect>
    </property>
   </widget>
@@ -65,7 +65,7 @@
   <widget class="QLineEdit" name="txtItem">
    <property name="geometry">
     <rect>
-     <x>190</x>
+     <x>200</x>
      <y>30</y>
      <width>120</width>
      <height>20</height>
@@ -75,7 +75,7 @@
   <widget class="QLineEdit" name="txtId">
    <property name="geometry">
     <rect>
-     <x>190</x>
+     <x>200</x>
      <y>80</y>
      <width>120</width>
      <height>20</height>

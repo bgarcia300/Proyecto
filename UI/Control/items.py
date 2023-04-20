@@ -12,7 +12,7 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
-        Dialog.resize(504, 278)
+        Dialog.resize(487, 181)
         self.label_3 = QtWidgets.QLabel(parent=Dialog)
         self.label_3.setGeometry(QtCore.QRect(10, 130, 171, 20))
         self.label_3.setObjectName("label_3")
@@ -20,16 +20,16 @@ class Ui_Dialog(object):
         self.label_2.setGeometry(QtCore.QRect(90, 80, 111, 20))
         self.label_2.setObjectName("label_2")
         self.txtDescription = QtWidgets.QLineEdit(parent=Dialog)
-        self.txtDescription.setGeometry(QtCore.QRect(190, 130, 261, 111))
+        self.txtDescription.setGeometry(QtCore.QRect(200, 130, 121, 21))
         self.txtDescription.setObjectName("txtDescription")
         self.label = QtWidgets.QLabel(parent=Dialog)
         self.label.setGeometry(QtCore.QRect(30, 30, 161, 20))
         self.label.setObjectName("label")
         self.txtItem = QtWidgets.QLineEdit(parent=Dialog)
-        self.txtItem.setGeometry(QtCore.QRect(190, 30, 120, 20))
+        self.txtItem.setGeometry(QtCore.QRect(200, 30, 120, 20))
         self.txtItem.setObjectName("txtItem")
         self.txtId = QtWidgets.QLineEdit(parent=Dialog)
-        self.txtId.setGeometry(QtCore.QRect(190, 80, 120, 20))
+        self.txtId.setGeometry(QtCore.QRect(200, 80, 120, 20))
         self.txtId.setObjectName("txtId")
         self.btnSave = QtWidgets.QPushButton(parent=Dialog)
         self.btnSave.setGeometry(QtCore.QRect(350, 30, 101, 23))
@@ -44,7 +44,7 @@ class Ui_Dialog(object):
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
         Dialog.setWindowTitle(_translate("Dialog", "Registro de Articulos"))
-        self.label_3.setText(_translate("Dialog", "Añade la descripcion del articulo:"))
+        self.label_3.setText(_translate("Dialog", "Cuantos articulos desea agregar?"))
         self.label_2.setText(_translate("Dialog", "Numero de ID:"))
         self.label.setText(_translate("Dialog", "Que articulo desea agregar?"))
         self.btnSave.setText(_translate("Dialog", "Guardar"))
