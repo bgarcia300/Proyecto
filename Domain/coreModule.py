@@ -1,3 +1,5 @@
+from Domain.classes import InventoryManager
+
 class persistence:
     itemsList = []
     warehousesList = []
@@ -17,3 +19,5 @@ class persistence:
     @classmethod    
     def getWarehouse(self):
         return self.warehousesList
+    
+inventory_manager = InventoryManager()

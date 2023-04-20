@@ -1,16 +1,16 @@
 import csv
 
 class Item:
-    def __init__(self):
-        self.id = None
-        self.name = None
-        self.amount = 0
+    def __init__(self, id, name, amount):
+        self.id = id
+        self.name = name
+        self.amount = amount
         
 class Warehouse:
-    def __init__(self):
-        self.id = None
-        self.name = None
-        self.item = {}
+    def __init__(self, id, name):
+        self.id = id
+        self.name = name
+        self.items = {}
         
     def add_item(self, item, quantity):
         if item.id in self.items:
@@ -26,10 +26,10 @@ class Warehouse:
         return False
         
 class Distributor:
-    def __init__(self):
-        self.id = None
-        self.name = None
-        self.address = None
+    def __init__(self, id, name, address):
+        self.id = id
+        self.name = name
+        self.address = address
         self.items = {}
         
     def add_item(self, item, quantity):
@@ -50,10 +50,11 @@ class InventoryManager:
         self.items = {}
         self.warehouses = {}
         self.distributors = {}
-        
-    def add_item(self, id, name, description):
-        item = Item(id, name, description)
+  
+    def add_item(self, id, name, amount):
+        item = Item(id, name, amount)
         self.items[id] = item
+
         
     def add_warehouse(self, id, name):
         warehouse = Warehouse(id, name)
@@ -65,10 +66,13 @@ class InventoryManager:
         
     def assign_item(self, warehouse_id, item_id, quantity):
         if item_id in self.items and warehouse_id in self.warehouses:
-            item = self.items[item_id]
-            warehouse = self.warehouses[warehouse_id]
-            warehouse.add_item(item, quantity)
-            return True
+            if self.items[item_id].amount >= quantity:
+                item = self.items[item_id]
+                warehouse = self.warehouses[warehouse_id]
+                warehouse.add_item(item, quantity)
+                self.items[item_id].amount = self.items[item_id].amount - quantity
+                return True
+            return False
         return False
         
     def distribute_item(self, distributor_id, item_id, quantity):

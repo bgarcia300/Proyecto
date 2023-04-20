@@ -1,6 +1,6 @@
 from PyQt6 import QtCore, QtGui, QtWidgets
 from UI.Control.distribuitor import Ui_Dialog
-from Domain.classes import *
+from Domain.coreModule import *
 
 class FrmDistributor(QtWidgets.QDialog):
     def __init__(self) -> None:
@@ -11,11 +11,11 @@ class FrmDistributor(QtWidgets.QDialog):
         self.ui.btnSave.clicked.connect(self.btnSave_Clicked)
         
     def btnSave_Clicked(self):
-        self.oItem = Distributor()
-        self.oItem.id = self.ui.txtDistribuitor.text()
-        self.oItem.name = self.ui.txtIdDistribuitor.text() 
-        self.oItem.address = self.ui.txtAddress.text() 
+        name = self.ui.txtDistribuitor.text()
+        id = self.ui.txtIdDistribuitor.text()
+        address = self.ui.txtAddress.text() 
         self.ui.txtDistribuitor.setText("")
         self.ui.txtIdDistribuitor.setText("")
         self.ui.txtAddress.setText("")
+        inventory_manager.add_distributor(id, name, address)
         

@@ -1,6 +1,5 @@
 from PyQt6 import QtCore, QtGui, QtWidgets
 from UI.Control.items import Ui_Dialog
-from Domain.classes import *
 from Domain.coreModule import *
 
 class FrmItems(QtWidgets.QDialog):
@@ -13,11 +12,10 @@ class FrmItems(QtWidgets.QDialog):
         self.ui.btnSave.clicked.connect(self.btnSave_Clicked)
         
     def btnSave_Clicked(self):
-        self.oItem = Item()
-        self.oItem.id = self.ui.txtId.text()
-        self.oItem.name = self.ui.txtItem.text() 
-        self.oItem.description = int(self.ui.txtDescription.text())
+        id = self.ui.txtId.text()
+        name = self.ui.txtItem.text() 
+        amount = int(self.ui.txtDescription.text())
         self.ui.txtId.setText("")
         self.ui.txtItem.setText("")
         self.ui.txtDescription.setText("")
-        persistence.addItem(self.oItem)
+        inventory_manager.add_item(id, name, amount)

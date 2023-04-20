@@ -7,6 +7,7 @@
 
 
 from PyQt6 import QtCore, QtGui, QtWidgets
+from Domain.coreModule import *
 
 
 class Ui_Dialog(object):
@@ -30,6 +31,7 @@ class Ui_Dialog(object):
         self.cmbItem = QtWidgets.QComboBox(parent=Dialog)
         self.cmbItem.setGeometry(QtCore.QRect(170, 30, 161, 22))
         self.cmbItem.setObjectName("cmbItem")
+        self.cmbItem.currentTextChanged.connect(self.spinner_index_changed)
         self.cmbWarehouse = QtWidgets.QComboBox(parent=Dialog)
         self.cmbWarehouse.setGeometry(QtCore.QRect(170, 140, 161, 22))
         self.cmbWarehouse.setObjectName("cmbWarehouse")
@@ -53,3 +55,10 @@ class Ui_Dialog(object):
         self.btnSave.setText(_translate("Dialog", "Guardar"))
         self.btnBack.setText(_translate("Dialog", "Volver"))
         self.label_3.setText(_translate("Dialog", "¿Cuantos de estos articulos desea mover?"))
+    
+    def spinner_index_changed(self, itemName):
+        for item in inventory_manager.items:
+            if inventory_manager.items[item].name == itemName:
+                self.spnItemsNumber.setMaximum(inventory_manager.items[item].amount)
+                self.spnItemsNumber.setMinimum(1)
+                self.spnItemsNumber.setValue(inventory_manager.items[item].amount)
